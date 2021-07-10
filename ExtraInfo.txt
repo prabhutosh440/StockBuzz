@@ -1,0 +1,33 @@
+ohlc = kite.ohlc(['NSE:INFY'])
+# {'NSE:INFY': {'instrument_token': 408065, 'last_price': 1564.5, 'ohlc':
+#     {'open': 1556, 'high': 1569.9, 'low': 1551, 'close': 1560.75}}}
+
+ltp = kite.ltp(['NSE:INFY'])
+#{'NSE:INFY': {'instrument_token': 408065, 'last_price': 1566.05}}
+
+margins = pd.DatFrame(kite.margins(segment='equity'))
+
+                    enabled        net  available  utilised
+adhoc_margin          True  211514.25       0.00       NaN
+cash                  True  211514.25  214054.40       NaN
+opening_balance       True  211514.25  214054.40       NaN
+live_balance          True  211514.25  211514.25       NaN
+collateral            True  211514.25       0.00       NaN
+intraday_payin        True  211514.25       0.00       NaN
+debits                True  211514.25        NaN   2540.15
+exposure              True  211514.25        NaN      0.00
+m2m_realised          True  211514.25        NaN      0.00
+m2m_unrealised        True  211514.25        NaN      0.00
+option_premium        True  211514.25        NaN      0.00
+payout                True  211514.25        NaN      0.00
+span                  True  211514.25        NaN      0.00
+holding_sales         True  211514.25        NaN      0.00
+turnover              True  211514.25        NaN      0.00
+liquid_collateral     True  211514.25        NaN      0.00
+stock_collateral      True  211514.25        NaN      0.00
+delivery              True  211514.25        NaN      0.00
+
+quote = kite.quote('NSE:INFY')
+'''{'NSE:INFY': {'instrument_token': 408065, 'timestamp': datetime.datetime(2021, 7, 9, 11, 41, 58), 'last_trade_time': datetime.datetime(2021, 7, 9, 11, 41, 58), 'last_price': 1559, 'last_quantity': 3, 'buy_quantity': 266863, 'sell_quantity': 363694, 'volume': 2036129, 'average_price': 1562.55, 'oi': 0, 'oi_day_high': 0, 'oi_day_low': 0, 'net_change': 0, 'lower_circuit_limit': 1404.7, 'upper_circuit_limit': 1716.8,
+'ohlc': {'open': 1556, 'high': 1569.9, 'low': 1551, 'close': 1560.75}, 'depth': {'buy': [{'price': 1558.7, 'quantity': 163, 'orders': 2}, {'price': 1558.65, 'quantity': 9, 'orders': 2}, {'price': 1558.6, 'quantity': 64, 'orders': 1}, {'price': 1558.55, 'quantity': 64, 'orders': 1}, {'price': 1558.5, 'quantity': 172, 'orders': 4}], 'sell': [{'price': 1559, 'quantity': 2, 'orders': 1}, {'price': 1559.05, 'quantity': 6, 'orders': 1},
+{'price': 1559.45, 'quantity': 1, 'orders': 1}, {'price': 1559.5, 'quantity': 170, 'orders': 4}, {'price': 1559.55, 'quantity': 75, 'orders': 2}]}}}'''
